@@ -1,82 +1,18 @@
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "provenance": [],
-      "authorship_tag": "ABX9TyO0Fywq/H2eLgegkSS0R8jN",
-      "include_colab_link": true
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
-  "cells": [
-    {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/Yann-Xavier/Python/blob/main/Formata%C3%A7%C3%A3o%20N%C3%BAmerica.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "def formatar_com_zeros(numero, tamanho):\n",
-        "    # Converte o número inteiro para uma string\n",
-        "    numero_str = str(numero)\n",
-        "\n",
-        "    # Calcula quantos zeros precisam ser adicionados\n",
-        "    zeros_faltantes = tamanho - len(numero_str)\n",
-        "\n",
-        "    # Formata a string com zeros à esquerda\n",
-        "    numero_formatado = f\"{zeros_faltantes * '0'}{numero_str}\"\n",
-        "\n",
-        "    return numero_formatado\n",
-        "\n",
-        "# Exemplo de uso\n",
-        "numero_inteiro = int(input(\"Digite um número inteiro: \"))\n",
-        "tamanho_desejado = int(input(\"Digite o tamanho desejado: \"))\n",
-        "\n",
-        "numero_formatado = formatar_com_zeros(numero_inteiro, tamanho_desejado)\n",
-        "print(f\"Número formatado: {numero_formatado}\")\n",
-        "\n"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "VJF5Vx6XPo9P",
-        "outputId": "09271447-a6c5-475b-ef2d-c7a7735a78c2"
-      },
-      "execution_count": 9,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Digite um número inteiro: 125\n",
-            "Digite o tamanho desejado: 200\n",
-            "Número formatado: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000125\n"
-          ]
-        }
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [],
-      "metadata": {
-        "id": "Fuse9rX8QTSB"
-      },
-      "execution_count": null,
-      "outputs": []
-    }
-  ]
-}
+def formatar_com_zeros(numero, tamanho):
+    # Converte o número inteiro para uma string
+    numero_str = str(numero)
+
+    # Calcula quantos zeros precisam ser adicionados
+    zeros_faltantes = tamanho - len(numero_str)
+
+    # Formata a string com zeros à esquerda
+    numero_formatado = f"{zeros_faltantes * '0'}{numero_str}"
+
+    return numero_formatado
+
+# Exemplo de uso
+numero_inteiro = int(input("Digite um número inteiro: "))
+tamanho_desejado = int(input("Digite o tamanho desejado: "))
+
+numero_formatado = formatar_com_zeros(numero_inteiro, tamanho_desejado)
+print(f"Número formatado: {numero_formatado}")
