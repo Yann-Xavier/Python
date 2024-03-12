@@ -1,81 +1,19 @@
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "provenance": [],
-      "authorship_tag": "ABX9TyPlk6aziLZsgLsc5qVBnOpE",
-      "include_colab_link": true
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
-  "cells": [
-    {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/Yann-Xavier/Python/blob/main/Conversor%20monet%C3%A1rio.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "def formatar_valor_monetario(valor_decimal):\n",
-        "    # Arredonda o valor para 2 casas decimais\n",
-        "    valor_arredondado = round(valor_decimal, 2)\n",
-        "\n",
-        "    # Transforma o valor arredondado em uma string\n",
-        "    valor_formatado = f\"{valor_arredondado:.2f}\"\n",
-        "\n",
-        "    # Substitui o ponto decimal pela vírgula\n",
-        "    valor_formatado = valor_formatado.replace('.', ',')\n",
-        "\n",
-        "    # Adiciona o símbolo de moeda (R$) e espaços para melhor legibilidade\n",
-        "    valor_final = f\"R$ {valor_formatado}\"\n",
-        "\n",
-        "    return valor_final\n",
-        "\n",
-        "\n",
-        "numero_decimal = float(input(\"Digite um número decimal: \"))\n",
-        "valor_monetario_formatado = formatar_valor_monetario(numero_decimal)\n",
-        "print(f\"Valor formatado: {valor_monetario_formatado}\")\n"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "DFhlBz0kPSyc",
-        "outputId": "db99985c-fe01-47d6-fc3b-90c47044965a"
-      },
-      "execution_count": 8,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Digite um número decimal: 10010025\n",
-            "Valor formatado: R$ 10010025,00\n"
-          ]
-        }
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [],
-      "metadata": {
-        "id": "VJF5Vx6XPo9P"
-      },
-      "execution_count": null,
-      "outputs": []
-    }
-  ]
-}
+def formatar_valor_monetario(valor_decimal):
+    # Arredonda o valor para 2 casas decimais
+    valor_arredondado = round(valor_decimal, 2)
+
+    # Transforma o valor arredondado em uma string
+    valor_formatado = f"{valor_arredondado:.2f}"
+
+    # Substitui o ponto decimal pela vírgula
+    valor_formatado = valor_formatado.replace('.', ',')
+
+    # Adiciona o símbolo de moeda (R$) e espaços para melhor legibilidade
+    valor_final = f"R$ {valor_formatado}"
+
+    return valor_final
+
+
+numero_decimal = float(input("Digite um número decimal: "))
+valor_monetario_formatado = formatar_valor_monetario(numero_decimal)
+print(f"Valor formatado: {valor_monetario_formatado}")
