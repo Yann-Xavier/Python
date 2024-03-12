@@ -1,66 +1,13 @@
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "provenance": [],
-      "authorship_tag": "ABX9TyN9pdsL2ytI7VkWJEpuk4kN",
-      "include_colab_link": true
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
-  "cells": [
-    {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/Yann-Xavier/Python/blob/main/Cita%C3%A7%C3%A3o.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "def adicionar_aspas(citacao):\n",
-        "    # Adiciona aspas simples no início e no fim da citação\n",
-        "    citacao_formatada = f\"'{citacao}'\"\n",
-        "    return citacao_formatada\n",
-        "\n",
-        "# Solicita ao usuário que insira uma citação\n",
-        "citacao_usuario = input(\"Digite uma citação: \")\n",
-        "\n",
-        "# Obtém a citação formatada com aspas\n",
-        "citacao_com_aspas = adicionar_aspas(citacao_usuario)\n",
-        "\n",
-        "# Exibe a citação formatada na tela\n",
-        "print(f\"Citação com aspas: {citacao_com_aspas}\")\n"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "zDjpF9vMRC3z",
-        "outputId": "c49176cd-d03a-4ef5-eed7-4851cd6385a1"
-      },
-      "execution_count": 14,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Digite uma citação: Tem tudo pra dar errado!\n",
-            "Citação com aspas: 'Tem tudo pra dar errado!'\n"
-          ]
-        }
-      ]
-    }
-  ]
-}
+def adicionar_aspas(citacao):
+    # Adiciona aspas simples no início e no fim da citação
+    citacao_formatada = f"'{citacao}'"
+    return citacao_formatada
+
+# Solicita ao usuário que insira uma citação
+citacao_usuario = input("Digite uma citação: ")
+
+# Obtém a citação formatada com aspas
+citacao_com_aspas = adicionar_aspas(citacao_usuario)
+
+# Exibe a citação formatada na tela
+print(f"Citação com aspas: {citacao_com_aspas}")
