@@ -1,137 +1,68 @@
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "provenance": [],
-      "authorship_tag": "ABX9TyPElWXGX+85k/OXdmxQaIDD",
-      "include_colab_link": true
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
-  "cells": [
-    {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/Yann-Xavier/Python/blob/main/Card%C3%A1pio.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "def imprimir_menu():\n",
-        "    \"\"\"\n",
-        "    Imprime o menu da lanchonete.\n",
-        "    \"\"\"\n",
-        "    print('-' * 30)\n",
-        "    print('\\t\\tCardápio')\n",
-        "    print('-' * 30)\n",
-        "    print('Código\\tEspecificação\\t\\tValores')\n",
-        "    print('100\\tCachorro Quente\\t\\tR$ 5,00')\n",
-        "    print('101\\tHamburguer\\t\\tR$ 10,00')\n",
-        "    print('102\\tCoxinha\\t\\t\\tR$ 4,00')\n",
-        "    print('-' * 30)\n",
-        "\n",
-        "def calcular_valor(codigo, quantidade):\n",
-        "    \"\"\"\n",
-        "    Calcula o valor a ser pago pelo item pedido.\n",
-        "\n",
-        "    Parâmetros:\n",
-        "    codigo (int): Código do item pedido.\n",
-        "    quantidade (int): Quantidade do item pedido.\n",
-        "\n",
-        "    Retorna:\n",
-        "    float: Valor total a ser pago pelo item.\n",
-        "    \"\"\"\n",
-        "    if codigo == 100:\n",
-        "        valor_unitario = 5.00\n",
-        "    elif codigo == 101:\n",
-        "        valor_unitario = 10.00\n",
-        "    elif codigo == 102:\n",
-        "        valor_unitario = 4.00\n",
-        "    else:\n",
-        "        print('Código inválido!')\n",
-        "        return None\n",
-        "\n",
-        "    valor_total = valor_unitario * quantidade\n",
-        "    return valor_total\n",
-        "\n",
-        "def main():\n",
-        "    \"\"\"\n",
-        "    Função principal do programa.\n",
-        "    \"\"\"\n",
-        "    print('Bem-vindo à Lanchonete!')\n",
-        "    imprimir_menu()\n",
-        "\n",
-        "    total_pagar = 0\n",
-        "    continuar_pedido = True\n",
-        "\n",
-        "    while continuar_pedido:\n",
-        "        try:\n",
-        "            codigo = int(input('Digite o código do item: '))\n",
-        "            quantidade = int(input('Digite a quantidade: '))\n",
-        "            valor_total_item = calcular_valor(codigo, quantidade)\n",
-        "\n",
-        "            if valor_total_item is not None:\n",
-        "                total_pagar += valor_total_item\n",
-        "                print(f'Item adicionado ao pedido. Total a pagar: R$ {total_pagar:.2f}')\n",
-        "\n",
-        "            continuar = input('Deseja adicionar mais itens ao pedido? (s/n): ')\n",
-        "            if continuar.lower() != 's':\n",
-        "                continuar_pedido = False\n",
-        "\n",
-        "        except ValueError:\n",
-        "            print('Erro: Por favor, insira um número inteiro para o código e a quantidade.')\n",
-        "\n",
-        "    print(f'Total a pagar pelo pedido: R$ {total_pagar:.2f}')\n",
-        "\n",
-        "if __name__ == '__main__':\n",
-        "    main()\n"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "yhjstwR89nOS",
-        "outputId": "67b8d3d8-2499-4c6b-e3ab-4b472230e16f"
-      },
-      "execution_count": 12,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Bem-vindo à Lanchonete!\n",
-            "------------------------------\n",
-            "\t\tCardápio\n",
-            "------------------------------\n",
-            "Código\tEspecificação\t\tValores\n",
-            "100\tCachorro Quente\t\tR$ 5,00\n",
-            "101\tHamburguer\t\tR$ 10,00\n",
-            "102\tCoxinha\t\t\tR$ 4,00\n",
-            "------------------------------\n",
-            "Digite o código do item: 100\n",
-            "Digite a quantidade: 2\n",
-            "Item adicionado ao pedido. Total a pagar: R$ 10.00\n",
-            "Deseja adicionar mais itens ao pedido? (s/n): s\n",
-            "Digite o código do item: 102\n",
-            "Digite a quantidade: 3\n",
-            "Item adicionado ao pedido. Total a pagar: R$ 22.00\n",
-            "Deseja adicionar mais itens ao pedido? (s/n): n\n",
-            "Total a pagar pelo pedido: R$ 22.00\n"
-          ]
-        }
-      ]
-    }
-  ]
-}
+def imprimir_menu():
+    """
+    Imprime o menu da lanchonete.
+    """
+    print('-' * 30)
+    print('\t\tCardápio')
+    print('-' * 30)
+    print('Código\tEspecificação\t\tValores')
+    print('100\tCachorro Quente\t\tR$ 5,00')
+    print('101\tHamburguer\t\tR$ 10,00')
+    print('102\tCoxinha\t\t\tR$ 4,00')
+    print('-' * 30)
+
+def calcular_valor(codigo, quantidade):
+    """
+    Calcula o valor a ser pago pelo item pedido.
+
+    Parâmetros:
+    codigo (int): Código do item pedido.
+    quantidade (int): Quantidade do item pedido.
+
+    Retorna:
+    float: Valor total a ser pago pelo item.
+    """
+    if codigo == 100:
+        valor_unitario = 5.00
+    elif codigo == 101:
+        valor_unitario = 10.00
+    elif codigo == 102:
+        valor_unitario = 4.00
+    else:
+        print('Código inválido!')
+        return None
+
+    valor_total = valor_unitario * quantidade
+    return valor_total
+
+def main():
+    """
+    Função principal do programa.
+    """
+    print('Bem-vindo à Lanchonete!')
+    imprimir_menu()
+
+    total_pagar = 0
+    continuar_pedido = True
+
+    while continuar_pedido:s
+        try:
+            codigo = int(input('Digite o código do item: '))
+            quantidade = int(input('Digite a quantidade: '))
+            valor_total_item = calcular_valor(codigo, quantidade)
+
+            if valor_total_item is not None:
+                total_pagar += valor_total_item
+                print(f'Item adicionado ao pedido. Total a pagar: R$ {total_pagar:.2f}')
+
+            continuar = input('Deseja adicionar mais itens ao pedido? (s/n): ')
+            if continuar.lower() != 's':
+                continuar_pedido = False
+
+        except ValueError:
+            print('Erro: Por favor, insira um número inteiro para o código e a quantidade.')
+
+    print(f'Total a pagar pelo pedido: R$ {total_pagar:.2f}')
+
+if __name__ == '__main__':
+    main()
